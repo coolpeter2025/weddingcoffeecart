@@ -104,7 +104,7 @@ const PACKAGES = [
     forCount: "Up to 200 guests",
     summary: "Our most-booked package — espresso, cold brew, and a signature drink for your reception.",
     includes: [
-      "Three trained baristas",
+      "Two trained baristas",
       "Full espresso menu — hot & iced",
       "Cold brew on tap",
       "One custom signature drink",
@@ -120,7 +120,7 @@ const PACKAGES = [
     forCount: "200+ guests",
     summary: "Full-day coverage — morning ceremony service through late-night espresso for the dance floor.",
     includes: [
-      "Four+ trained baristas",
+      "Two trained baristas",
       "Full espresso & specialty menu",
       "Cold brew on tap",
       "Two custom signature drinks",
