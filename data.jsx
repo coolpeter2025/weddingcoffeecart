@@ -20,65 +20,51 @@ const BRAND = {
 // Drink categories — for menu page
 const DRINKS = [
   {
-    slug: "espresso-bar",
-    name: "The Espresso Bar",
-    short: "Single-origin shots pulled to order on a commercial La Marzocco.",
+    slug: "espresso",
+    name: "Espresso",
+    short: "Two-shot espresso drinks, pulled to order — every one available hot or iced.",
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop",
-    items: ["Espresso", "Macchiato", "Cortado", "Cappuccino", "Latte", "Flat White", "Mocha", "Americano"],
+    items: ["Espresso", "Americano", "Latte", "Cappuccino", "Mocha"],
   },
   {
-    slug: "drip",
-    name: "Pour-Over & Drip",
-    short: "Hand-poured single origin coffees and small-batch drip service.",
-    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1400&auto=format&fit=crop",
-    items: ["V60 Pour-Over", "Chemex Carafe", "Batch Brew", "Decaf Drip"],
+    slug: "syrups",
+    name: "Syrups",
+    short: "House flavor syrups — add one to any espresso drink.",
+    image: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?q=80&w=1400&auto=format&fit=crop",
+    items: ["French Vanilla", "Caramel", "White Chocolate", "Peppermint", "Lavender", "Simple Syrup", "Hazelnut", "Pistachio"],
   },
   {
-    slug: "cold",
-    name: "Cold Brew & Iced",
-    short: "Twenty-hour cold brew on tap, plus iced lattes shaken with cane sugar.",
+    slug: "milks",
+    name: "Milks",
+    short: "Choose the milk for any drink on the menu.",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1400&auto=format&fit=crop",
-    items: ["Cold Brew on Tap", "Iced Latte", "Iced Vanilla Sweet Cream", "Espresso Tonic", "Iced Americano"],
-  },
-  {
-    slug: "specialty",
-    name: "Specialty",
-    short: "Matcha whisked to order, masala chai, and turmeric golden milk.",
-    image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=1400&auto=format&fit=crop",
-    items: ["Ceremonial Matcha Latte", "Iced Matcha", "Masala Chai Latte", "Dirty Chai", "Golden Milk", "London Fog"],
+    items: ["Whole", "Oat"],
   },
   {
     slug: "tea",
-    name: "Tea Service",
-    short: "Loose-leaf tea, brewed by the cup. Caffeine-free options always on hand.",
+    name: "Tea",
+    short: "Hot tea, brewed by the cup.",
     image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=1400&auto=format&fit=crop",
-    items: ["Earl Grey", "English Breakfast", "Jasmine Green", "Chamomile", "Peppermint", "Rooibos"],
-  },
-  {
-    slug: "cocoa",
-    name: "Hot Chocolate",
-    short: "European-style hot chocolate made with single-origin Valrhona.",
-    image: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?q=80&w=1400&auto=format&fit=crop",
-    items: ["Classic Hot Chocolate", "Spiced Mexican Hot Chocolate", "White Chocolate", "Mocha"],
+    items: ["Black", "Peach", "Peppermint", "Passion"],
   },
 ];
 
 // Signature drinks — for editorial gallery on home
 const SIGNATURES = [
   {
-    name: "The Delightful",
-    notes: "Honey · Vanilla Bean · Sea Salt · Espresso",
+    name: "Pumpkin Patch Bliss",
+    notes: "Two shots of espresso, your choice of milk & pumpkin syrup, served over ice.",
+    image: "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    name: "Golden Caramel Cloud",
+    notes: "Two shots of espresso, your choice of steamed milk & caramel syrup, topped with light foam.",
     image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    name: "Magnolia Latte",
-    notes: "Lavender · Cream · Orange Blossom",
+    name: "Vanilla Velvet",
+    notes: "Two shots of espresso, your choice of steamed milk & vanilla syrup.",
     image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    name: "Bay Breeze Cold Brew",
-    notes: "Citrus Tonic · Cold Brew · Mint",
-    image: "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
