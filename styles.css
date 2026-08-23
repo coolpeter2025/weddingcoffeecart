@@ -1,0 +1,250 @@
+/* ==========================================================================
+   The Delightful Bean — Wedding Coffee Cart
+   Modern minimal · luxury wedding vendor
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+:root {
+  /* ── Palette ─────────────────────────────────────────── */
+  --bone:        #FAF7F1;   /* page bg, warm bone */
+  --cream:       #F3EEE4;   /* alt section, surface cards */
+  --paper:       #FFFEFB;   /* warm white */
+  --sand:        #E6DECF;   /* subtle borders */
+  --linen:       #DDD3BF;   /* slightly stronger border */
+
+  --ink:         #1C1814;   /* espresso black for headings */
+  --ink-soft:    #2E2820;
+  --espresso:    #4A3528;   /* primary accent brown */
+  --honey:       #B89968;   /* warm honey accent (sparingly) */
+  --muted:       #847B6D;   /* secondary body copy */
+  --muted-2:     #B8AE9E;   /* tertiary */
+
+  --white:       #ffffff;
+
+  /* ── Type ────────────────────────────────────────────── */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-sans:    'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Scale */
+  --fs-eyebrow: 11px;
+  --fs-xs:      12px;
+  --fs-sm:      13px;
+  --fs-body:    15px;
+  --fs-base:    16px;
+  --fs-lg:      18px;
+  --fs-xl:      22px;
+  --fs-2xl:     28px;
+  --fs-3xl:     36px;
+  --fs-4xl:     48px;
+  --fs-5xl:     64px;
+  --fs-6xl:     88px;
+  --fs-hero:    112px;
+
+  --tracking-eyebrow: 0.22em;
+  --tracking-wide:    0.14em;
+
+  /* Layout */
+  --container-max: 1320px;
+  --pad: 32px;
+
+  /* Radius — almost none, this is editorial */
+  --radius-sm: 2px;
+  --radius:    4px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  background: var(--bone);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "ss02";
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 400; color: var(--ink); }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ── Display headings (Cormorant) ───────────────────────── */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+.display-italic { font-style: italic; font-weight: 300; }
+
+.d-hero    { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-hero); line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); }
+.d-h1      { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-6xl);  line-height: 1.0;  letter-spacing: -0.02em; color: var(--ink); }
+.d-h2      { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-5xl);  line-height: 1.05; letter-spacing: -0.015em; color: var(--ink); }
+.d-h3      { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-4xl);  line-height: 1.1;  letter-spacing: -0.01em;  color: var(--ink); }
+.d-h4      { font-family: var(--font-display); font-weight: 500; font-size: var(--fs-3xl);  line-height: 1.15; letter-spacing: -0.01em;  color: var(--ink); }
+
+/* ── Eyebrow label ───────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--espresso);
+}
+.eyebrow--muted { color: var(--muted); }
+.eyebrow--paper { color: rgba(255,255,255,0.7); }
+
+/* ── Body text variants ─────────────────────────────────── */
+.body-lg { font-size: var(--fs-lg); line-height: 1.7; color: var(--ink-soft); }
+.body    { font-size: var(--fs-base); line-height: 1.7; color: var(--ink-soft); }
+.body-sm { font-size: var(--fs-sm); line-height: 1.65; color: var(--muted); }
+.lead-serif {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 26px; line-height: 1.4; color: var(--ink-soft); letter-spacing: -0.005em;
+}
+
+/* ── Layout ──────────────────────────────────────────────── */
+.container { max-width: var(--container-max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+.container-narrow { max-width: 980px; margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+.container-tight { max-width: 740px; margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 18px 32px; border: 0; cursor: pointer;
+  transition: all 0.25s ease; border-radius: 0;
+  min-height: 52px;
+}
+.btn-ink {
+  background: var(--ink); color: var(--bone);
+}
+.btn-ink:hover { background: var(--espresso); }
+
+.btn-outline {
+  background: transparent; color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.btn-outline:hover { background: var(--ink); color: var(--bone); }
+
+.btn-outline-paper {
+  background: transparent; color: var(--bone);
+  box-shadow: inset 0 0 0 1px rgba(250,247,241,0.5);
+}
+.btn-outline-paper:hover { background: var(--bone); color: var(--ink); }
+
+.btn-ghost {
+  background: transparent; color: var(--ink);
+  padding: 8px 0;
+}
+.btn-ghost:hover { color: var(--espresso); }
+
+/* ── Link/CTA arrow ──────────────────────────────────────── */
+.cta-arrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-sans); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 4px;
+  transition: gap 0.25s ease;
+}
+.cta-arrow:hover { gap: 14px; }
+
+/* ── Rule divider ───────────────────────────────────────── */
+.rule { height: 1px; background: var(--sand); border: 0; margin: 0; }
+.rule-soft { height: 1px; background: var(--linen); border: 0; }
+.rule-dot { display: inline-block; width: 3px; height: 3px; background: currentColor; border-radius: 50%; vertical-align: middle; margin: 0 12px; opacity: 0.6; }
+
+/* ── Sections ───────────────────────────────────────────── */
+.section { padding: 120px 0; }
+.section-sm { padding: 80px 0; }
+.section-cream { background: var(--cream); }
+.section-bone { background: var(--bone); }
+.section-paper { background: var(--paper); }
+.section-ink  { background: var(--ink); color: var(--bone); }
+.section-ink h1, .section-ink h2, .section-ink h3, .section-ink h4 { color: var(--bone); }
+
+/* ── Form fields ────────────────────────────────────────── */
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field-label {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 500; color: var(--muted);
+}
+.field-input, .field-select, .field-textarea {
+  font-family: var(--font-sans); font-size: 15px;
+  background: transparent; border: 0;
+  border-bottom: 1px solid var(--linen);
+  padding: 12px 0; outline: none; color: var(--ink);
+  border-radius: 0; -webkit-appearance: none; appearance: none;
+}
+.field-input:focus, .field-select:focus, .field-textarea:focus {
+  border-bottom-color: var(--ink);
+}
+.field-textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+.field-input::placeholder, .field-textarea::placeholder { color: var(--muted-2); }
+.field-select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+                    linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 7px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+/* ── Selectable chip (for booking flow) ─────────────────── */
+.chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 22px; font-size: 13px; letter-spacing: 0.06em;
+  background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--linen); cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans); font-weight: 400;
+}
+.chip:hover { border-color: var(--ink); }
+.chip.is-active {
+  background: var(--ink); color: var(--bone); border-color: var(--ink);
+}
+
+/* ── Card (subtle) ──────────────────────────────────────── */
+.card-paper {
+  background: var(--paper);
+  border: 1px solid var(--sand);
+  padding: 40px;
+}
+
+/* ── Image helpers ──────────────────────────────────────── */
+.img-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+.aspect-3x4 { aspect-ratio: 3/4; }
+.aspect-4x3 { aspect-ratio: 4/3; }
+.aspect-1x1 { aspect-ratio: 1/1; }
+.aspect-16x9 { aspect-ratio: 16/9; }
+.aspect-2x3 { aspect-ratio: 2/3; }
+
+/* ── Number index ───────────────────────────────────────── */
+.num-index {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 56px; line-height: 1; color: var(--honey);
+  letter-spacing: -0.02em;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(8px); animation: fadeUp 0.7s ease forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+/* ── Header / nav ───────────────────────────────────────── */
+.nav-link {
+  font-family: var(--font-sans); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink);
+  background: none; border: 0; cursor: pointer; padding: 8px 0;
+  transition: color 0.2s ease;
+}
+.nav-link.is-active { color: var(--espresso); }
+.nav-link:hover { color: var(--espresso); }
+
+/* ── Misc ───────────────────────────────────────────────── */
+::selection { background: var(--ink); color: var(--bone); }
+[data-screen-label] { scroll-margin-top: 100px; }

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>The Delightful Bean — Wedding Coffee for Tampa Bay</title>
+<link rel="stylesheet" href="styles.css?v=1"/>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="./data.jsx?v=1"></script>
+<script type="text/babel" src="./chrome.jsx?v=1"></script>
+<script type="text/babel" src="./sections.jsx?v=1"></script>
+<script type="text/babel" src="./pages.jsx?v=1"></script>
+<script type="text/babel" src="./inquire.jsx?v=1"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+function App() {
+  const [route, setRoute] = useState(() => {
+    try { return localStorage.getItem("sb_route") || "home"; } catch { return "home"; }
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem("sb_route", route); } catch {}
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [route]);
+
+  const navigate = (id) => {
+    // External CTA — all "inquire" calls route to the live quote form
+    if (id === "inquire") {
+      window.open("https://www.delightfulbean.com/quote", "_blank", "noopener");
+      return;
+    }
+    setRoute(id);
+  };
+
+  let Page = null;
+  let citySlug = null;
+  if (route.startsWith("city:")) {
+    citySlug = route.slice("city:".length);
+    Page = <CityPage slug={citySlug} onNavigate={navigate}/>;
+  } else {
+    const pages = {
+      home:      <HomePage onNavigate={navigate}/>,
+      about:     <AboutPage onNavigate={navigate}/>,
+      drinks:    <DrinksPage onNavigate={navigate}/>,
+      packages:  <PackagesPage onNavigate={navigate}/>,
+      gallery:   <GalleryPage onNavigate={navigate}/>,
+      locations: <LocationsPage onNavigate={navigate}/>,
+      inquire:   <InquirePage onNavigate={navigate}/>,
+    };
+    Page = pages[route] || pages.home;
+  }
+
+  return (
+    <div>
+      <Header route={route} onNavigate={navigate}/>
+      <main>{Page}</main>
+      <Footer onNavigate={navigate}/>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("app")).render(<App/>);
+</script>
+</body>
+</html>
