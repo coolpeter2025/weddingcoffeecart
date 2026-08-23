@@ -221,7 +221,7 @@ const GALLERY = [
   { src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1200&auto=format&fit=crop", alt: "Pour over", caption: "V60 pour-over service", aspect: "1/1" },
   { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop", alt: "Wedding venue", caption: "Sandpearl · Clearwater Beach", aspect: "4/3" },
   { src: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop", alt: "Cold brew", caption: "Cold brew on tap", aspect: "3/4" },
-  { src: "https://images.unsplash.com/photo-1542228262-3d663b306a53?q=80&w=1200&auto=format&fit=crop", alt: "Wedding rings", caption: "Caroline & Theo · Armature Works", aspect: "1/1" },
+  { src: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1200&auto=format&fit=crop", alt: "Wedding rings", caption: "Caroline & Theo · Armature Works", aspect: "1/1" },
   { src: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=1200&auto=format&fit=crop", alt: "Matcha", caption: "Ceremonial matcha latte", aspect: "4/3" },
   { src: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1200&auto=format&fit=crop", alt: "Wedding ceremony", caption: "Belleair Country Club", aspect: "3/4" },
 ];
