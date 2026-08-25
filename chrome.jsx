@@ -36,38 +36,58 @@ function Header({ route, onNavigate }) {
     { id: "gallery",   label: "Gallery" },
     { id: "locations", label: "Areas" },
   ];
-  const isHome = route === "home";
+  const [menuOpen, setMenuOpen] = useState(false);
+  const go = (id) => { setMenuOpen(false); onNavigate(id); };
 
   // top utility bar visible on every route
   return (
     <header style={{position:"sticky",top:0,zIndex:50,background:"var(--bone)",borderBottom:"1px solid var(--sand)"}}>
       <div style={{background:"var(--ink)",color:"var(--bone)"}}>
         <div className="container" style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 32px",fontSize:11,letterSpacing:"0.16em",textTransform:"uppercase",fontWeight:500}}>
-          <span style={{color:"rgba(250,247,241,0.7)"}}>Now booking Spring &amp; Fall 2026 weddings</span>
+          <span className="util-note" style={{color:"rgba(250,247,241,0.7)"}}>Now booking Spring &amp; Fall 2026 weddings</span>
           <span style={{display:"flex",gap:24,alignItems:"center"}}>
             <a href={`tel:${BRAND.phoneTel}`} style={{color:"var(--bone)"}}>{BRAND.phone}</a>
-            <span style={{color:"rgba(250,247,241,0.4)"}}>·</span>
-            <a href={`mailto:${BRAND.email}`} style={{color:"rgba(250,247,241,0.7)"}}>{BRAND.email}</a>
+            <span className="util-sep" style={{color:"rgba(250,247,241,0.4)"}}>·</span>
+            <a className="util-email" href={`mailto:${BRAND.email}`} style={{color:"rgba(250,247,241,0.7)"}}>{BRAND.email}</a>
           </span>
         </div>
       </div>
       <div className="container" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"22px 32px"}}>
-        <button onClick={() => onNavigate("home")} style={{background:"none",border:0,padding:0,cursor:"pointer"}}>
+        <button onClick={() => go("home")} style={{background:"none",border:0,padding:0,cursor:"pointer"}}>
           <Logomark size={40}/>
         </button>
-        <nav style={{display:"flex",alignItems:"center",gap:32,flexShrink:0}}>
+        <nav className="nav-desktop" style={{display:"flex",alignItems:"center",gap:32,flexShrink:0}}>
           {links.map(l => (
             <button
               key={l.id}
-              onClick={() => onNavigate(l.id)}
+              onClick={() => go(l.id)}
               className={`nav-link ${route === l.id || (l.id === "locations" && route.startsWith("city:")) ? "is-active" : ""}`}
             >{l.label}</button>
           ))}
-          <button onClick={() => onNavigate("inquire")} className="btn btn-ink" style={{padding:"14px 26px",minHeight:0,fontSize:11}}>
+          <button onClick={() => go("inquire")} className="btn btn-ink" style={{padding:"14px 26px",minHeight:0,fontSize:11}}>
             Inquire
           </button>
         </nav>
+        <button className="nav-toggle" aria-label="Menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(o => !o)}
+          style={{background:"none",border:0,padding:8,cursor:"pointer",color:"var(--ink)",marginRight:-8}}>
+          {menuOpen
+            ? <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            : <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>}
+        </button>
       </div>
+      {menuOpen && (
+        <nav className="nav-mobile">
+          {links.map(l => (
+            <button
+              key={l.id}
+              onClick={() => go(l.id)}
+              className={`nav-link ${route === l.id || (l.id === "locations" && route.startsWith("city:")) ? "is-active" : ""}`}
+              style={{padding:"15px 0",fontSize:14,textAlign:"left",borderBottom:"1px solid var(--sand)"}}
+            >{l.label}</button>
+          ))}
+          <button onClick={() => go("inquire")} className="btn btn-ink" style={{marginTop:18,width:"100%"}}>Inquire</button>
+        </nav>
+      )}
     </header>
   );
 }
@@ -142,7 +162,7 @@ function Footer({ onNavigate }) {
           </div>
         </div>
 
-        <div style={{paddingTop:32,display:"flex",justifyContent:"space-between",fontSize:11.5,letterSpacing:"0.06em",color:"rgba(250,247,241,0.4)"}}>
+        <div className="footer-bottom" style={{paddingTop:32,display:"flex",justifyContent:"space-between",gap:12,flexWrap:"wrap",fontSize:11.5,letterSpacing:"0.06em",color:"rgba(250,247,241,0.4)"}}>
           <span>© 2026 The Delightful Bean — Tampa Bay, Florida</span>
           <span>Insured · Licensed Mobile Food Vendor · Florida DBPR</span>
         </div>
