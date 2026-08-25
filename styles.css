@@ -248,57 +248,72 @@ button { font-family: inherit; cursor: pointer; }
 /* ── Misc ───────────────────────────────────────────────── */
 ::selection { background: var(--ink); color: var(--bone); }
 [data-screen-label] { scroll-margin-top: 100px; }
+
 /* ==========================================================================
    Responsive / mobile
    ========================================================================== */
-/* Tablet & down: shrink the oversized display scale; wrap the header nav */
+.nav-toggle { display: none; }
+.nav-mobile { display: none; }
+
+/* ── Tablet & down: shrink the oversized display scale, switch to hamburger ── */
 @media (max-width: 960px) {
   :root {
-    --fs-hero: 66px; --fs-6xl: 52px; --fs-5xl: 44px; --fs-4xl: 36px; --fs-3xl: 28px;
+    --fs-hero: 68px; --fs-6xl: 54px; --fs-5xl: 46px; --fs-4xl: 37px; --fs-3xl: 29px;
     --pad: 24px;
   }
   .section { padding: 88px 0; }
-  header .container { flex-wrap: wrap !important; }
-  header nav { flex-wrap: wrap; justify-content: center; gap: 10px 18px !important; }
+
+  /* desktop nav overflows below ~860px — use the hamburger */
+  .nav-desktop { display: none !important; }
+  .nav-toggle { display: inline-flex !important; align-items: center; justify-content: center; }
+  .nav-mobile {
+    display: flex !important; flex-direction: column;
+    padding: 8px 24px 24px; background: var(--bone);
+    border-top: 1px solid var(--sand);
+  }
+  .util-note, .util-sep, .util-email { display: none !important; }
 }
 
-/* Phone: stack columns, tighten spacing, fluid type, centered wrapped nav */
+/* ── Phone: stack every column, tighten rhythm, fluid type ── */
 @media (max-width: 680px) {
   :root {
     --fs-hero: 44px; --fs-6xl: 38px; --fs-5xl: 32px; --fs-4xl: 27px;
-    --fs-3xl: 23px; --fs-2xl: 21px; --fs-xl: 20px; --pad: 20px;
+    --fs-3xl: 23px; --fs-2xl: 21px; --fs-xl: 20px;
+    --pad: 20px;
   }
   body { font-size: 15px; }
 
   .section    { padding: 56px 0 !important; }
   .section-sm { padding: 40px 0 !important; }
+
   .lead-serif { font-size: 19px !important; line-height: 1.45 !important; }
   .body-lg    { font-size: 16px !important; }
   .num-index  { font-size: 36px !important; }
+  .d-hero     { line-height: 1.03 !important; }
 
   /* stack every multi-column grid */
-  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 28px !important; }
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
 
   /* rein in oversized gaps; let space-between rows wrap instead of overflow */
   [style*="gap: 120px"],[style*="gap: 100px"],[style*="gap: 96px"],
   [style*="gap: 80px"],[style*="gap: 64px"] { gap: 36px !important; }
-  [style*="display: flex"][style*="justify-content: space-between"] { flex-wrap: wrap; gap: 12px 16px; }
+  [style*="display: flex"][style*="justify-content: space-between"] { flex-wrap: wrap; gap: 14px; }
 
   /* tame big inline section paddings */
-  [style*="padding: 100px 32px 120px"] { padding: 44px 20px 52px !important; }
-  [style*="padding: 140px 0"]          { padding: 56px 0 !important; }
-  [style*="padding: 120px 0 160px"]    { padding: 52px 0 64px !important; }
-  [style*="padding: 96px 32px 32px"]   { padding: 52px 20px 28px !important; }
+  [style*="padding: 100px 32px 120px"] { padding: 44px 20px 52px !important; }  /* hero */
+  [style*="padding: 140px 0"]          { padding: 56px 0 !important; }          /* home intro */
+  [style*="padding: 120px 0 160px"]    { padding: 52px 0 64px !important; }      /* inquire */
+  [style*="padding: 96px 32px 32px"]   { padding: 52px 20px 28px !important; }   /* footer */
 
   /* fixed-height media -> mobile-friendly heights */
-  [style*="height: 680px"]    { height: 420px !important; }
-  [style*="height: 520px"]    { height: 340px !important; }
-  [style*="min-height: 70vh"] { min-height: 0 !important; }
-  [style*="font-size: 44px"]  { font-size: 30px !important; }
+  [style*="height: 680px"]     { height: 420px !important; }   /* hero composition */
+  [style*="height: 520px"]     { height: 340px !important; }   /* drinks category images */
+  [style*="min-height: 70vh"]  { min-height: 0 !important; }
+  [style*="font-size: 44px"]   { font-size: 30px !important; } /* inline section headings */
 
   .btn { padding: 16px 22px !important; letter-spacing: 0.16em !important; }
-
-  /* header: center logo + wrapped nav; shrink utility bar */
-  header .container { justify-content: center !important; gap: 10px 16px; text-align: center; }
-  header nav { width: 100%; justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 8px !important; }
 }
