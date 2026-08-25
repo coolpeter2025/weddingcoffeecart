@@ -41,22 +41,7 @@ function Hero({ onNavigate }) {
               <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop"
                    alt="Wedding florals" className="img-cover"/>
             </div>
-            {/* Caption block over the gap */}
-            <div style={{position:"absolute",left:"43%",bottom:24,width:"36%"}}>
-              <p className="eyebrow" style={{marginBottom:6}}>Pictured</p>
-              <p className="body-sm" style={{color:"var(--ink-soft)",lineHeight:1.5}}>The Delightful — espresso with honey, vanilla bean, and a pinch of sea salt.</p>
-            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Marquee-style trust bar */}
-      <div style={{borderTop:"1px solid var(--sand)",borderBottom:"1px solid var(--sand)",background:"var(--paper)"}}>
-        <div className="container" style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"20px 32px",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"var(--muted)",fontWeight:500}}>
-          <span>Featured in</span>
-          {PRESS.map((p,i) => (
-            <span key={i} style={{fontFamily:"var(--font-display)",fontStyle:"italic",fontSize:18,letterSpacing:"0.02em",color:"var(--ink-soft)",textTransform:"none",fontWeight:400}}>{p}</span>
-          ))}
         </div>
       </div>
     </section>
