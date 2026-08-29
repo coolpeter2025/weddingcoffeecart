@@ -33,13 +33,13 @@ function Hero({ onNavigate }) {
           {/* Right — image composition */}
           <div style={{position:"relative",height:680}}>
             <div style={{position:"absolute",inset:0,top:60,right:0,width:"82%",height:"100%"}}>
-              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop"
-                   alt="Latte art" className="img-cover"/>
+              <img src="/img_1287.jpg"
+                   alt="The Delightful Bean coffee cart" className="img-cover"/>
             </div>
             {/* Small float */}
             <div style={{position:"absolute",left:0,bottom:0,width:"42%",height:"45%",background:"var(--cream)"}}>
-              <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop"
-                   alt="Wedding florals" className="img-cover"/>
+              <img src="/img_4926.jpg"
+                   alt="Espresso machine" className="img-cover"/>
             </div>
           </div>
         </div>
@@ -301,8 +301,8 @@ function ClosingCTA({ onNavigate }) {
           </div>
           <div style={{position:"relative",height:520}}>
             <div style={{position:"absolute",inset:0}}>
-              <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1200&auto=format&fit=crop"
-                   alt="Wedding setup" className="img-cover"/>
+              <img src="/img_8432.jpg"
+                   alt="Coffee cart under the oaks" className="img-cover"/>
             </div>
           </div>
         </div>

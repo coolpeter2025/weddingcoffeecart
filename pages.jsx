@@ -48,8 +48,8 @@ function AboutPage({ onNavigate }) {
         <div className="container">
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:80,alignItems:"center"}}>
             <div style={{height:680}}>
-              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1200&auto=format&fit=crop"
-                   alt="Barista at work" className="img-cover"/>
+              <img src="/img_5023.jpg"
+                   alt="Barista serving guests" className="img-cover"/>
             </div>
             <div>
               <p className="eyebrow" style={{marginBottom:24}}>Our story</p>
@@ -376,7 +376,7 @@ function CityPage({ slug, onNavigate }) {
               </div>
             </div>
             <div style={{position:"relative",height:540}}>
-              <img src={`https://images.unsplash.com/photo-${slug === "tampa" ? "1495474472287-4d71bcdd2085" : slug === "sarasota" ? "1606800052052-a08af7148866" : slug.includes("beach") ? "1485808191679-5f86510681a2" : "1519225421980-715cb0215aed"}?q=80&w=1200&auto=format&fit=crop`}
+              <img src={`/img_${slug === "tampa" ? "1287" : slug === "sarasota" ? "2189" : slug.includes("beach") ? "6714" : "9424"}.jpg`}
                    alt={location.name} className="img-cover"/>
             </div>
           </div>
