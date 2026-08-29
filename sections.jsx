@@ -4,43 +4,31 @@ const { useState: useState_s, useEffect: useEffect_s } = React;
 // ── HERO ─────────────────────────────────────────────────
 function Hero({ onNavigate }) {
   return (
-    <section style={{background:"var(--bone)",position:"relative",overflow:"hidden"}}>
-      <div className="container" style={{padding:"100px 32px 120px"}}>
-        <div style={{display:"grid",gridTemplateColumns:"1.05fr 0.95fr",gap:80,alignItems:"end"}}>
-          {/* Left — editorial type column */}
-          <div>
-            <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:36}}>
-              <span style={{width:36,height:1,background:"var(--ink)"}}/>
-              <span className="eyebrow" style={{color:"var(--ink)"}}>{BRAND.founded} · Tampa, Florida</span>
-            </div>
-
-            <h1 className="d-hero" style={{marginBottom:32}}>
-              The wedding<br/>
-              <span style={{fontStyle:"italic",fontWeight:300,color:"var(--espresso)"}}>coffee bar,</span><br/>
-              re-imagined.
-            </h1>
-
-            <p className="lead-serif" style={{maxWidth:560,marginBottom:48}}>
-              An espresso-trained team, a single-origin menu, and one hand-built oak cart — booked for the most thoughtfully designed weddings in Tampa Bay.
-            </p>
-
-            <div style={{display:"flex",gap:16,alignItems:"center",flexWrap:"wrap"}}>
-              <button onClick={() => onNavigate("inquire")} className="btn btn-ink">Begin Your Inquiry</button>
-              <button onClick={() => onNavigate("packages")} className="cta-arrow">View Packages →</button>
-            </div>
+    <section style={{position:"relative",width:"100%",minHeight:"90vh",maxHeight:920,display:"flex",alignItems:"flex-end",overflow:"hidden",background:"var(--ink)"}}>
+      {/* Full-bleed hero photo */}
+      <img src="/uploads/img_hero.jpg" alt="The Delightful Bean wedding coffee cart under the oaks"
+           style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 38%"}}/>
+      {/* Legibility scrim */}
+      <div style={{position:"absolute",inset:0,background:"linear-gradient(to top, rgba(28,24,20,0.74) 0%, rgba(28,24,20,0.38) 34%, rgba(28,24,20,0.04) 62%)"}}/>
+      {/* Content */}
+      <div className="container" style={{position:"relative",padding:"0 32px 92px",width:"100%"}}>
+        <div style={{maxWidth:660}}>
+          <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:26}}>
+            <span style={{width:36,height:1,background:"var(--bone)"}}/>
+            <span className="eyebrow" style={{color:"var(--bone)"}}>{BRAND.founded} · Tampa, Florida</span>
           </div>
 
-          {/* Right — image composition */}
-          <div style={{position:"relative",height:680}}>
-            <div style={{position:"absolute",inset:0,top:60,right:0,width:"82%",height:"100%"}}>
-              <img src="/img_1287.jpg"
-                   alt="The Delightful Bean coffee cart" className="img-cover"/>
-            </div>
-            {/* Small float */}
-            <div style={{position:"absolute",left:0,bottom:0,width:"42%",height:"45%",background:"var(--cream)"}}>
-              <img src="/img_4926.jpg"
-                   alt="Espresso machine" className="img-cover"/>
-            </div>
+          <h1 className="d-hero" style={{marginBottom:26,color:"var(--bone)"}}>
+            The wedding <span style={{fontStyle:"italic",fontWeight:300}}>coffee bar,</span> re-imagined.
+          </h1>
+
+          <p className="lead-serif" style={{maxWidth:540,marginBottom:40,color:"rgba(250,247,241,0.92)"}}>
+            An espresso-trained team, a single-origin menu, and one hand-built oak cart — booked for the most thoughtfully designed weddings in Tampa Bay.
+          </p>
+
+          <div style={{display:"flex",gap:20,alignItems:"center",flexWrap:"wrap"}}>
+            <button onClick={() => onNavigate("inquire")} className="btn" style={{background:"var(--bone)",color:"var(--ink)"}}>Begin Your Inquiry</button>
+            <button onClick={() => onNavigate("packages")} className="cta-arrow" style={{color:"var(--bone)"}}>View Packages →</button>
           </div>
         </div>
       </div>
