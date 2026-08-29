@@ -23,28 +23,28 @@ const DRINKS = [
     slug: "espresso",
     name: "Espresso",
     short: "Two-shot espresso drinks, pulled to order — every one available hot or iced.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop",
+    image: "/img_4926.jpg",
     items: ["Espresso", "Americano", "Latte", "Cappuccino", "Mocha"],
   },
   {
     slug: "syrups",
     name: "Syrups",
     short: "House flavor syrups — add one to any espresso drink.",
-    image: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?q=80&w=1400&auto=format&fit=crop",
+    image: "/img_9656.jpg",
     items: ["French Vanilla", "Caramel", "White Chocolate", "Peppermint", "Lavender", "Simple Syrup", "Hazelnut", "Pistachio"],
   },
   {
     slug: "milks",
     name: "Milks",
     short: "Choose the milk for any drink on the menu.",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1400&auto=format&fit=crop",
+    image: "/img_1287.jpg",
     items: ["Whole", "Oat"],
   },
   {
     slug: "tea",
     name: "Tea",
     short: "Hot tea, brewed by the cup.",
-    image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=1400&auto=format&fit=crop",
+    image: "/img_7328.jpg",
     items: ["Black", "Peach", "Peppermint", "Passion"],
   },
 ];
@@ -54,17 +54,17 @@ const SIGNATURES = [
   {
     name: "Pumpkin Patch Bliss",
     notes: "Two shots of espresso, your choice of milk & pumpkin syrup, served over ice.",
-    image: "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=1200&auto=format&fit=crop",
+    image: "/img_9652.jpg",
   },
   {
     name: "Golden Caramel Cloud",
     notes: "Two shots of espresso, your choice of steamed milk & caramel syrup, topped with light foam.",
-    image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop",
+    image: "/img_9656.jpg",
   },
   {
     name: "Vanilla Velvet",
     notes: "Two shots of espresso, your choice of steamed milk & vanilla syrup.",
-    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop",
+    image: "/img_2189.jpg",
   },
 ];
 
@@ -196,18 +196,17 @@ const TESTIMONIALS = [
 
 // Gallery images — editorial wedding/coffee photos
 const GALLERY = [
-  { src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop", alt: "Latte art rosetta", caption: "The Delightful · Honey & sea salt", aspect: "3/4" },
-  { src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=1200&auto=format&fit=crop", alt: "Wedding florals", caption: "Powel Crosley Estate · Sarasota", aspect: "4/3" },
-  { src: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop", alt: "Espresso shot", caption: "Espresso bar setup", aspect: "1/1" },
-  { src: "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=1200&auto=format&fit=crop", alt: "Coffee with flowers", caption: "Bay Breeze · cold brew tonic", aspect: "3/4" },
-  { src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop", alt: "Espresso cup", caption: "Late-night espresso service", aspect: "4/3" },
-  { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop", alt: "Couple", caption: "Olivia & James · Sarasota", aspect: "3/4" },
-  { src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1200&auto=format&fit=crop", alt: "Pour over", caption: "V60 pour-over service", aspect: "1/1" },
-  { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop", alt: "Wedding venue", caption: "Sandpearl · Clearwater Beach", aspect: "4/3" },
-  { src: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop", alt: "Iced coffee", caption: "Iced coffee service", aspect: "3/4" },
-  { src: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1200&auto=format&fit=crop", alt: "Wedding rings", caption: "Caroline & Theo · Armature Works", aspect: "1/1" },
-  { src: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=1200&auto=format&fit=crop", alt: "Matcha", caption: "Ceremonial matcha latte", aspect: "4/3" },
-  { src: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1200&auto=format&fit=crop", alt: "Wedding ceremony", caption: "Belleair Country Club", aspect: "3/4" },
+  { src: "/img_2189.jpg", alt: "Personalized coffee cart", caption: "Monica & Alexander · personalized bar", aspect: "3/4" },
+  { src: "/img_1287.jpg", alt: "Coffee cart by the water", caption: "Waterfront cart service", aspect: "3/4" },
+  { src: "/img_9652.jpg", alt: "Espresso machine and syrups", caption: "Pulled to order", aspect: "1/1" },
+  { src: "/img_6902.jpg", alt: "Coffee bar at dusk", caption: "Blue hour on the bar", aspect: "3/4" },
+  { src: "/img_7328.jpg", alt: "Coffee cart under a pavilion", caption: "Under the pavilion lights", aspect: "3/4" },
+  { src: "/img_9424.jpg", alt: "Outdoor coffee cart", caption: "Open-air celebration", aspect: "1/1" },
+  { src: "/img_6714.jpg", alt: "Waterfront wedding venue", caption: "Ceremony by the water", aspect: "3/4" },
+  { src: "/img_4926.jpg", alt: "Espresso machine close-up", caption: "The espresso bar", aspect: "1/1" },
+  { src: "/img_8432.jpg", alt: "Coffee cart under oak trees", caption: "Golden hour under the oaks", aspect: "3/4" },
+  { src: "/img_9656.jpg", alt: "House syrup selection", caption: "House syrup selection", aspect: "3/4" },
+  { src: "/img_5023.jpg", alt: "Baristas serving guests", caption: "Two baristas on site", aspect: "3/4" },
 ];
 
 const PRESS = [
